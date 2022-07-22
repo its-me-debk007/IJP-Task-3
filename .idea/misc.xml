@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/Task3/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android/Task3/app/src/main/res/drawable/circular_shape.xml" value="0.189" />
+        <entry key="..\:/Android/Task3/app/src/main/res/drawable/ic_camera.xml" value="0.2425" />
+        <entry key="..\:/Android/Task3/app/src/main/res/drawable/ic_microphone.xml" value="0.2425" />
+        <entry key="..\:/Android/Task3/app/src/main/res/drawable/power_btn_state.xml" value="0.2415" />
+        <entry key="..\:/Android/Task3/app/src/main/res/layout/access_log_item.xml" value="0.536" />
+        <entry key="..\:/Android/Task3/app/src/main/res/layout/activitiy_main2.xml" value="0.4" />
+        <entry key="..\:/Android/Task3/app/src/main/res/layout/activity_main.xml" value="0.536" />
       </map>
     </option>
   </component>

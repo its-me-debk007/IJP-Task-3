@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Task #3</string>
+    <string name="access_logs"><u>Access Logs</u></string>
+    <string name="color_configuration"><u>Color Configuration</u></string>
+    <string name="dot_position"><u>Dot Position</u></string>
+    <string name="dot_size"><u>Dot Size</u></string>
 </resources>
