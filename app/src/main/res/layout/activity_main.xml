@@ -1,9 +1,621 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.activity.MainActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/headingConstraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/appName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/cormorant_sc_bold"
+                    android:text="Access Dots"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/thirdDot" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/firstDot"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/green"
+                    app:layout_constraintStart_toStartOf="@+id/appName"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/secondDot"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/orange"
+                    app:layout_constraintStart_toEndOf="@id/firstDot"
+                    app:layout_constraintTop_toTopOf="@id/firstDot"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/thirdDot"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/blue"
+                    app:layout_constraintStart_toEndOf="@+id/secondDot"
+                    app:layout_constraintTop_toTopOf="@+id/secondDot"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/appSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="@null"
+                    app:layout_constraintBottom_toBottomOf="@+id/appName"
+                    app:layout_constraintStart_toEndOf="@+id/appName"
+                    app:layout_constraintTop_toTopOf="@+id/appName" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/colorConfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accessLogs">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurfaceVariant"
+                        android:fontFamily="@font/cormorant_sc_bold"
+                        android:paddingVertical="4dp"
+                        android:text="@string/color_configuration"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/lora_regular"
+                        android:text="Camera Access Dot"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cameraDot"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="4dp"
+                        app:cardBackgroundColor="@color/green"
+                        app:cardCornerRadius="48dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/text1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text1"
+                        app:strokeWidth="0dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/lora_regular"
+                        android:text="Microphone Access Dot"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/microphoneDot"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="32dp"
+                        app:cardBackgroundColor="@color/orange"
+                        app:cardCornerRadius="48dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/text2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/text2"
+                        app:strokeWidth="0dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/lora_regular"
+                        android:text="GPS Location Access Dot"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/gpsSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@null"
+                        app:layout_constraintBottom_toBottomOf="@+id/text3"
+                        app:layout_constraintEnd_toEndOf="@+id/microphoneDot"
+                        app:layout_constraintStart_toStartOf="@+id/microphoneDot"
+                        app:layout_constraintTop_toTopOf="@+id/text3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dotPosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/colorConfig">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/heading2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurfaceVariant"
+                        android:fontFamily="@font/cormorant_sc_bold"
+                        android:paddingVertical="4dp"
+                        android:text="@string/dot_position"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        app:chipSpacingHorizontal="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/heading2">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/leftOfCamera"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Left of camera" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/rightOfCamera"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Right of camera" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/topLeft"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Top left" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/topRight"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Top right" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/bottomLeft"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bottom left" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/bottomRight"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bottom right" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/aroundCamera"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Around Camera" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/custom"
+                            style="@style/CustomChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Custom" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/customPositionCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:cardElevation="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/chipGroup">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/xCoordinate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lora_regular"
+                                android:text="X:"
+                                app:layout_constraintBottom_toBottomOf="@+id/xAxis"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/xAxis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/lora_regular"
+                                android:text="436"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@id/xCoordinate"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/yCoordinate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:fontFamily="@font/lora_regular"
+                                android:text="Y:"
+                                app:layout_constraintBottom_toBottomOf="@+id/materialTextView"
+                                app:layout_constraintStart_toEndOf="@id/xAxis" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/materialTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/lora_regular"
+                                android:text="20"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@id/yCoordinate"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dotSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="52dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dotPosition">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/heading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurfaceVariant"
+                        android:fontFamily="@font/cormorant_sc_bold"
+                        android:paddingVertical="4dp"
+                        android:text="@string/dot_size"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sizeSlider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="56dp"
+                        android:layout_marginBottom="8dp"
+                        android:stepSize="1"
+                        android:value="4"
+                        android:valueFrom="1"
+                        android:valueTo="10"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/heading3" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/sizePreview"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        app:cardBackgroundColor="@color/green"
+                        app:cardCornerRadius="48dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/sizeSlider"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.3"
+                        app:layout_constraintStart_toEndOf="@+id/sizeSlider"
+                        app:layout_constraintTop_toTopOf="@+id/sizeSlider"
+                        app:strokeWidth="0dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/accessLogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingConstraintLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="16dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/accessLogsHeading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorSurfaceVariant"
+                        android:fontFamily="@font/cormorant_sc_bold"
+                        android:paddingVertical="4dp"
+                        android:text="@string/access_logs"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="Show more access logs"
+                        app:layout_constraintBottom_toBottomOf="@+id/accessLogsHeading"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/accessLogsHeading"
+                        app:srcCompat="@drawable/ic_arrow_down" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/usedApp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"
+                        android:text="Camera"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_camera"
+                        app:fontFamily="@font/lora_regular"
+                        app:layout_constraintEnd_toStartOf="@+id/useDate"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/accessLogsHeading" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/useDate"
+                        style="@style/CustomTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="07 July '22\n06 : 24 : 30"
+                        app:layout_constraintBottom_toBottomOf="@+id/usedApp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/usedApp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/usedTimeDuration"
+                        style="@style/CustomTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 : 00 : 52"
+                        app:layout_constraintBottom_toBottomOf="@+id/useDate"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/useDate"
+                        app:layout_constraintTop_toTopOf="@+id/useDate" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/usedApp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Microphone"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_microphone"
+                        app:fontFamily="@font/lora_regular"
+                        app:layout_constraintEnd_toStartOf="@+id/useDate"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/useDate" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/useDate2"
+                        style="@style/CustomTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="22 Nov '19\n13 : 00 : 39"
+                        app:layout_constraintBottom_toBottomOf="@+id/usedApp2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/usedApp2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/usedTimeDuration2"
+                        style="@style/CustomTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 : 10 : 02"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/useDate2"
+                        app:layout_constraintTop_toTopOf="@+id/useDate2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/usedApp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"
+                        android:text="Camera"
+                        android:textSize="16sp"
+                        app:drawableStartCompat="@drawable/ic_camera"
+                        app:fontFamily="@font/lora_regular"
+                        app:layout_constraintEnd_toStartOf="@+id/useDate2"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/useDate2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/useDate3"
+                        style="@style/CustomTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01 Jan '24\n19 : 10 : 04"
+                        app:layout_constraintBottom_toBottomOf="@+id/usedApp3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/usedApp3" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/usedTimeDuration3"
+                        style="@style/CustomTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 : 09 : 52"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/useDate3"
+                        app:layout_constraintTop_toTopOf="@+id/useDate3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/loveTheApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Rate &amp; Info"
+        app:srcCompat="@drawable/ic_favorite" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="Rate"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_star" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="72dp"
+        android:contentDescription="Info"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_info" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="Share"
+        android:visibility="invisible"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_share" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
